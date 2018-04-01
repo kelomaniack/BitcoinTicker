@@ -78,8 +78,9 @@ class ViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     /***************************************************************/
     
     func updateBitcoinData(json : JSON) {
-        
-        if let tempResult = json["averages"]["day"].double {
+        // ask: asking price
+        // json[averages][day]: the daily average price
+        if let tempResult = json["ask"].double {
             print("tempResult: \(tempResult)")
             bitcoinPriceLabel.text = bitcoinPriceLabel.text! + String(tempResult)
         }
